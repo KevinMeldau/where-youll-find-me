@@ -20,14 +20,6 @@ const Clue5 = () => {
             <p className="mb-4">
                Somewhere between the clouds and the curve of the Earth, you unlocked the last piece. The story shifted again, only now, the magic is closer than ever. This part doesn’t need a plane ticket or a playlist. It just needs a keen eye. And maybe a little curiosity.
             </p>
-            <p className="mb-4 font-bold">
-               When you reach immigration, they might ask where you’re staying.{" "}
-               Click{" "}
-               <a href="/manage-reservation.pdf" target="_blank" rel="noopener noreferrer" className="text-pink-500 underline hover:text-pink-600 transition-colors">
-                  this link
-               </a>{" "}
-               and show them our hotel booking.
-            </p>
             <h2 className="text-lg font-semibold mb-2">What I need you to do:</h2>
             <ol className="list-decimal pl-6 space-y-2 marker:font-bold">
                <li>
@@ -40,6 +32,15 @@ const Clue5 = () => {
                   That code, those three letters, is the password to your next and final clue, for example: <span className="font-mono">USD</span>.
                </li>
             </ol>
+            <br />
+            <p className="mb-4">
+               When you reach immigration, they might ask where you’re staying. <span className="font-bold">Don't cheat and open it unless they ask you.{" "}<br />
+               Click{" "}
+               <a href="/manage-reservation.pdf" target="_blank" rel="noopener noreferrer" className="text-pink-500 underline hover:text-pink-600 transition-colors">
+                  this link
+               </a>{" "}
+               and show them our hotel booking.</span>
+            </p>
          </div>
          <Clue5Footer />
       </div>

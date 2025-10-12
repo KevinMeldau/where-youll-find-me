@@ -18,7 +18,7 @@ const Clue3 = () => {
             </h1>
 
             <p className="mb-4">
-               You’re about to take another leap, one that leaves behind the familiar and steps into something wilder, more unknown. This part of the story doesn’t need coordinates. What matters is the direction: forward. You don’t have to see the entire journey, just trust that you’re exactly where you’re meant to be.
+               You’re about to take another leap, one that leaves behind the familiar and steps into something wilder, more unknown. What matters is the direction: forward. You don’t have to see the entire journey, just trust that you’re exactly where you’re meant to be.
             </p>
 
             <h2 className="text-lg font-semibold mb-2">What I need you to do:</h2>
@@ -27,7 +27,7 @@ const Clue3 = () => {
                   Go back to <span className="font-bold">LAX</span>, be there by <span className="font-bold">8:30PM (November 15th).</span>
                </li>
                <li>
-                  When you get there, go to the <span className="font-bold">Delta counter</span> and give them your passport. Board your flight.
+                  When you get there, go to the Delta kiosk and print your boarding pass. Your ticket number is: <span className="font-bold">0062364065840</span>.
                </li>
                <li>
                   <span className="font-bold">Make sure you sign up for wifi for this flight.</span>

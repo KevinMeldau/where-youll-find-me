@@ -27,8 +27,8 @@ const P1Intro = () => {
             </p>
             <p>
                You’re not going to work today, I’ve been speaking to Hannah about this for months. Take a
-               breath. Let the noise fall away. Then jump in, heart first. I will not reply to your
-               messages, not yet anyway. But I’m here. In every word. This is real. It’s happening. And it’s all for
+               breath. Let the noise fall away. Then jump in, heart first. <span className="font-bold">I will not reply to your
+               messages, not yet anyway.</span> But I’m here. In every word. This is real. It’s happening. And it’s all for
                you.
             </p>
          </div>
