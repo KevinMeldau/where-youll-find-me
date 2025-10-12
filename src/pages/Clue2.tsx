@@ -23,11 +23,11 @@ const Clue2 = () => {
             <h2 className="text-lg font-semibold mb-2">What I need you to do:</h2>
             <ol className="list-decimal pl-6 space-y-2 marker:font-bold">
                <li>
-                  Make your way to the <span className="font-bold">Hilton LAX.</span> (You’ll find the Hilton Honors app already installed on your phone, inside a folder called Travel)
+                  Make your way to the <span className="font-bold">Hilton Los Angeles Airport.</span> (You’ll find the Hilton Honors app already installed on your phone, inside a folder called Travel). The address is: 5711 West Century Boulevard, Los Angeles.
                </li>
-               <li>Open the app. Your digital room key will be waiting for you, no front desk checkin needed.</li>
+               <li>Open the app. Your digital room key will be waiting for you, no front desk checkin needed. If for some reason the app does not work, go to the front desk and give them your name.</li>
                <li>Go to your room. Eat something. Take a hot shower. Put your feet up. Sleep, you’ll need it.</li>
-               <li>At 7:00 PM (not before, I’ll know), open the safe in your room. The code for the safe is the year you were born. What you’ll find will show you where to go next.</li>
+               <li>At 7:00 PM (not before, I’ll know), open the safe in your room. The code for the safe is the year you were born. Inside the safe is what you’ll need to continue the journey.</li>
                <li>
                   You’ll also find the password to your next clue (<span className="italic">Clearance to Dream</span>).
                </li>

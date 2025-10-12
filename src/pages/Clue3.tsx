@@ -24,19 +24,16 @@ const Clue3 = () => {
             <h2 className="text-lg font-semibold mb-2">What I need you to do:</h2>
             <ol className="list-decimal pl-6 space-y-2 marker:font-bold">
                <li>
-                  Go back to <span className="font-bold">LAX</span>, be there by 8:00 PM.
+                  Go back to <span className="font-bold">LAX</span>, be there by <span className="font-bold">8:30 PM – November 15th.</span>
                </li>
                <li>
-                  When you get there, go to the <span className="font-bold">XXX counter</span> and give them your passport. Board your flight.
+                  When you get there, go to the <span className="font-bold">Delta counter</span> and give them your passport. Board your flight.
                </li>
                <li>
-                  Make sure you sign up for wifi for this flight.
+                  <span className="font-bold">Make sure you sign up for wifi for this flight.</span>
                </li>
                <li>
-                  The password to your next clue (<span className="italic">The Line Between</span>) is your flight number, for example: <span className="font-mono">BF710</span>.
-               </li>
-               <li>
-                  You’re in the air. On the screen in front of you, open the flight map. Keep an eye on the latitude. When you fly over the equator is when you can open your next clue.
+                  The password to your next clue (<span className="italic">The Line Between</span>) is your flight number, for example: <span className="font-mono">F72456</span>.
                </li>
             </ol>
          </div>
