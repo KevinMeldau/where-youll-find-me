@@ -23,7 +23,7 @@ const Clue2 = () => {
             <h2 className="text-lg font-semibold mb-2">What I need you to do:</h2>
             <ol className="list-decimal pl-6 space-y-2 marker:font-bold">
                <li>
-                  Make your way to the <span className="font-bold">Hilton Los Angeles Airport.</span> (You’ll find the Hilton Honors app already installed on your phone, inside a folder called Travel). The address is: 5711 West Century Boulevard, Los Angeles.
+                  Make your way to the <span className="font-bold">Hilton Los Angeles Airport.</span> (You’ll find the Hilton Honors app already installed on your phone, inside a folder called Travel). The address is: <span className="font-bold">5711 West Century Boulevard, Los Angeles.</span>
                </li>
                <li>Open the app. Your digital room key will be waiting for you, no front desk checkin needed. If for some reason the app does not work, go to the front desk and give them your name.</li>
                <li>Go to your room. Eat something. Take a hot shower. Put your feet up. Sleep, you’ll need it.</li>
