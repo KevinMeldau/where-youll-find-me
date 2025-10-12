@@ -31,7 +31,7 @@ const Clue6 = () => {
                   When you come out of customs, look for someone holding a sign with your name on it.
                </li>
                <li>
-                  When you get to the hotel, head to <span className="font-bold">Vaipuna Pool Bar</span>.
+                  When you get to the hotel, head to the <span className="font-bold">Vaipuna Pool Bar</span>.
                </li>
                <li>
                   Sit down. Put down your phone. Take a breath. Take a look around.
