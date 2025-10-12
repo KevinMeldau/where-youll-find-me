@@ -34,7 +34,7 @@ const Clue1 = () => {
                <li>Go to the Delta counter and give them your ID.</li>
                <li>Board your flight.</li>
                <li>
-                  The password to your next clue (<span className="italic">Shadow Landing</span>) is your flight number, for example: <span className="font-mono">DA776</span>.
+                  The password to your next clue (<span className="italic">Shadow Landing</span>) is your flight number, for example: <span className="font-mono">F72456</span>.
                </li>
             </ol>
          </div>
