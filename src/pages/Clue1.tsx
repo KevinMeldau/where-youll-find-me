@@ -30,7 +30,7 @@ const Clue1 = () => {
                <li>
                   No passport, just ID you can fly with, and a phone charger.
                </li>
-               <li>Call a Lyft. Be at the airport by 8:30 AM – November 15th.</li>
+               <li>Call a Lyft. Be at the airport by 8:30AM (November 15th).</li>
                <li>Go to the Delta counter and give them your ID.</li>
                <li>Board your flight.</li>
                <li>

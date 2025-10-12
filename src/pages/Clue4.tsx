@@ -27,7 +27,7 @@ const Clue4 = () => {
                   You’re in the air now. On the screen in front of you, open the flight map and watch the latitude. 
                   When you cross the equator (not before, I’ll know), that’s when you can open your next clue.<br /><br /> 
                   Put on your headphones and press play on the mixed tape (playlist) I created for you. 
-                  Let the world fall away. Don’t skip ahead, just listen. When a line finds you, when it feels like it was written for you, you’ll know.<br />
+                  Let the world fall away. Don’t skip ahead, just listen. When a line finds you, when it feels like it was written for you, you’ll know.<br /><br />
                   That’s your password to your next clue (<span className="italic">The Currency of You</span>). 
                   Type it in exactly as it’s sung. No quotes. No punctuation. Just the words, for example: <span className="font-mono">all of me loves all of you</span>.
                </li>
