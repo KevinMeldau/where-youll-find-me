@@ -27,7 +27,7 @@ const Clue2 = () => {
                </li>
                <li>Open the app. Your digital room key will be waiting for you, no front desk checkin needed. If for some reason the app does not work, go to the front desk and give them your name.</li>
                <li>Go to your room. Eat something. Take a hot shower. Put your feet up. Sleep, you’ll need it.</li>
-               <li>At 7:00 PM (not before, I’ll know), open the safe in your room. The code for the safe is the year you were born. Inside the safe is what you’ll need to continue the journey.</li>
+               <li>At 7:00PM (not before, I’ll know), open the safe in your room. The code for the safe is the year you were born. Inside the safe is what you’ll need to continue the journey.</li>
                <li>
                   You’ll also find the password to your next clue (<span className="italic">Clearance to Dream</span>).
                </li>
