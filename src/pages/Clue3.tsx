@@ -27,7 +27,7 @@ const Clue3 = () => {
                   Go back to <span className="font-bold">LAX</span>, be there by <span className="font-bold">8:30PM (November 15th).</span>
                </li>
                <li>
-                  When you get there, go to the Delta kiosk and print your boarding pass. Your ticket number is: <span className="font-bold">0062364065840</span>.
+                  When you get there, go to the Delta kiosk and print your boarding pass. Your ticket number is: <span className="font-bold">0062364065840</span>. Your confirmation code is: <span className="font-bold">GEYSQL</span>.
                </li>
                <li>
                   <span className="font-bold">Make sure you sign up for wifi for this flight.</span>
