@@ -9,12 +9,12 @@ const Clue6Footer = () => {
    return (
       <div className="px-4 py-5">
          <div className="flex gap-3 justify-between max-w-[70%] mx-auto">
-            <img src="./appfiles/icons/Mic Default.svg" alt="mic" />
-            <img src="./appfiles/icons/Music Default.svg" alt="music" />
+            <img src="./appfiles/icons/Mic Default.svg" alt="mic" className={"w-[50px]"} />
+            <img src="./appfiles/icons/Music Default.svg" alt="music" className={"w-[50px]"} />
             <img
                src="./appfiles/icons/Photo Default.svg"
                alt="photo"
-               className="cursor-pointer"
+               className="cursor-pointer w-[50px]"
                onClick={() => setShowGallery(true)}
             />
          </div>
