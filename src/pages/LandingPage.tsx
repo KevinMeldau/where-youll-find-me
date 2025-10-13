@@ -4,7 +4,7 @@ const LandingPage = () => {
    return (
       <div className="w-full h-dvh bg-primary flex flex-col items-center justify-center">
          <h1 className="text-center font-bold text-whitef !text-[44px]">
-            Ready for <br/> a Journey?
+            Ready for <br/> an Adventure?
          </h1>
 
          <Link to={"/intro"} className="pulse-ring-wrapper w-[200px] h-[200px] mt-10">
