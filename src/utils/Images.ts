@@ -30,7 +30,7 @@ export const galleryImages = [
    { src: "/images/New York.jpg", title: "New York", description: "This trip was such a rush, our first real time in New York, and I just felt alive. I get that feeling a lot with you." },
    { src: "/images/Pawley_s Island.jpg", title: "Pawley's Island", description: "Marley, the way you loved this dog was one of the many reasons I love you. I couldn’t show it then, but my heart broke the day we said goodbye." },
    { src: "/images/Phillipines - Honeymoon.jpg", title: "Phillipines – Honeymoon", description: "A full month on an island, something I’ve always wanted. I couldn’t imagine doing it with anyone else." },
-   { src: "/images/PhiPhi.jpg", title: "PhiPhi", description: "Phi Phi, the place I first fell in love with Thailand. I didn’t think that memory could get any better… and then you showed up." },
+   { src: "/images/PhiPhi.jpg", title: "PhiPhi", description: "Phi Phi, the place I first fell in love with Thailand. I didn’t think that memory could get any better… and then you showed up and changed my life." },
    { src: "/images/Pranburi.jpg", title: "Pranburi", description: "Our trips to Pranburi on the bike. Honestly, this is where I really fell for you." },
    { src: "/images/Pranburri – Engagment.jpg", title: "Pranburri – Engagment", description: "Great hotel (my choice), perfect moment by the pool (also me), and the best decision of my life. Honestly, I nailed it." },
    { src: "/images/Reykjavik, Iceland.JPG", title: "Reykjavik, Iceland", description: "Reykjavik, Iceland, my race, my dream. I only hope I get to help make one of yours come true too." },
