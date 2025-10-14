@@ -28,7 +28,7 @@ const Clue6 = () => {
             <h2 className="text-lg font-semibold mb-2">What I need you to do:</h2>
             <ol className="list-decimal pl-6 space-y-2 marker:font-bold">
                <li>
-                  When you come out of customs, look for someone holding a sign with your name on it.
+                  When you come out of customs, look for someone holding a sign with your name on it. Go with them.
                </li>
                <li>
                   When you get to the hotel, head to the <span className="font-bold">Vaipuna Pool Bar</span>.
@@ -38,7 +38,7 @@ const Clue6 = () => {
                </li>
             </ol>
 
-            <p className="mt-4 font-semibold">
+            <p className="mt-4 font-bold">
                This is where you’ll find me.
             </p>
          </div>
