@@ -132,7 +132,7 @@ const Clue2Footer = () => {
         />
 
         <div className="flex justify-center mt-4">
-          <Button text="Next Clue" className="w-[200px]" onClick={handleNext} />
+          <Button text="Next Clue" className="w-full" onClick={handleNext} />
         </div>
       </div>
 

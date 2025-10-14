@@ -15,7 +15,7 @@ const BeganJourneyFooter = () => {
 
     try {
       if (audio.paused) {
-        await audio.play();  // user click triggers play on mobile
+        await audio.play(); // user click triggers play on mobile
         setIsPlaying(true);
       } else {
         audio.pause();
@@ -36,8 +36,8 @@ const BeganJourneyFooter = () => {
 
   return (
     <div className="px-4 py-5">
-      <div className="flex gap-3">
-        {/* Mic icon — plays/pauses inline (no visible controls) */}
+      <div className="flex gap-3 items-center">
+        {/* Mic icon — same size as clue icons, with hover animation */}
         <button
           type="button"
           onClick={togglePlay}
@@ -45,12 +45,12 @@ const BeganJourneyFooter = () => {
           aria-pressed={isPlaying}
           aria-label={isPlaying ? "Pause voice note" : "Play voice note"}
           title={isPlaying ? "Pause voice note" : "Play voice note"}
-          className="flex items-center focus:outline-none"
+          className="flex items-center focus:outline-none transition-transform hover:scale-110"
         >
           <img
             src="./appfiles/icons/Mic Default.svg"
             alt="mic"
-            className="w-8 h-8"
+            className="w-[50px]"
           />
         </button>
 
@@ -69,13 +69,15 @@ const BeganJourneyFooter = () => {
         onEnded={() => setIsPlaying(false)}
       >
         <source src={AUDIO_SRC} type="audio/mpeg" />
-        {/* Optional AAC fallback if you add one later:
-        <source src="/audio/hannah-voice-clip.m4a" type="audio/aac" /> */}
         Your browser does not support the audio element.
       </audio>
 
-      <div className="flex justify-between mt-4">
-        <Button text="Begin the Journey" onClick={() => navigate("/clue1")} />
+      <div className="flex justify-center mt-4">
+        <Button
+          text="Begin this adventure"
+          className="w-full"
+          onClick={() => navigate("/clue1")}
+        />
       </div>
 
       {/* Screen reader status (kept visually hidden) */}
