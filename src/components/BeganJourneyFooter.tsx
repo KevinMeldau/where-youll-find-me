@@ -11,8 +11,8 @@ const BeganJourneyFooter = () => {
                <img src="./appfiles/icons/Mic Default.svg" alt="mic" />
             </div>
             <div>
-               <p className="font-bold">Voice note to from Hannah</p>
-               <p>Voice note</p>
+               <p className="font-bold">Voice note from Hannah</p>
+               <p>Play me!</p>
             </div>
          </div>
          <div className="flex justify-between mt-4">
