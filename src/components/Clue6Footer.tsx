@@ -3,6 +3,8 @@ import Popup from "../ui/Popup.tsx";
 import GalleryPopup from "../ui/GalleryPopup.tsx";
 
 const AUDIO_SRC = "/audio/clue-6-where-youll-find-me.mp3"; // file in /public/audio/
+const SPOTIFY_EMBED =
+  "https://open.spotify.com/embed/playlist/755pqZrjUGTORjQTdb7Pcx?utm_source=generator";
 
 const Clue6Footer = () => {
   const [showError, setShowError] = useState(false);
@@ -11,6 +13,9 @@ const Clue6Footer = () => {
   // audio controls
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
+
+  // spotify embed toggle
+  const [showPlayer, setShowPlayer] = useState(false);
 
   const togglePlay = async () => {
     const audio = audioRef.current;
@@ -47,12 +52,22 @@ const Clue6Footer = () => {
           />
         </button>
 
-        {/* Music icon with hover scale */}
-        <img
-          src="./appfiles/icons/Music Default.svg"
-          alt="music"
-          className="w-[50px] transition-transform hover:scale-110"
-        />
+        {/* Music icon — toggles inline Spotify player (compact) */}
+        <button
+          type="button"
+          onClick={() => setShowPlayer((v) => !v)}
+          aria-expanded={showPlayer}
+          aria-controls="spotify-embed"
+          aria-label="Play Spotify playlist"
+          title="Play Spotify playlist"
+          className="focus:outline-none transition-transform hover:scale-110"
+        >
+          <img
+            src="./appfiles/icons/Music Default.svg"
+            alt="music"
+            className="w-[50px] pointer-events-none"
+          />
+        </button>
 
         {/* Photo icon with hover scale */}
         <img
@@ -63,6 +78,25 @@ const Clue6Footer = () => {
         />
       </div>
 
+      {/* Inline Spotify player (compact height: 152) */}
+      {showPlayer && (
+        <div className="flex justify-center mt-4">
+          <iframe
+            id="spotify-embed"
+            data-testid="embed-iframe"
+            style={{ borderRadius: 12 }}
+            src={SPOTIFY_EMBED}
+            width="100%"
+            height="152"
+            frameBorder={0}
+            allowFullScreen
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy"
+            className="max-w-md w-full"
+            title="Spotify Playlist"
+          />
+        </div>
+      )}
 
       {/* Hidden audio element */}
       <audio
