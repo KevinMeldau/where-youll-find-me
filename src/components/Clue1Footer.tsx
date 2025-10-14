@@ -44,7 +44,7 @@ const Clue1Footer = () => {
     <div className="px-4 py-5">
       {/* Icons row */}
       <div className="flex gap-3 justify-between max-w-[70%] mx-auto">
-        {/* Mic icon (click to play voice note) */}
+        {/* Mic icon */}
         <button
           type="button"
           onClick={togglePlay}
@@ -59,21 +59,22 @@ const Clue1Footer = () => {
           />
         </button>
 
-        {/* Music icon */}
+        {/* Music icon with hover scale */}
         <img
           src="./appfiles/icons/Music Default.svg"
           alt="music"
-          className="w-[50px]"
+          className="w-[50px] transition-transform hover:scale-110"
         />
 
-        {/* Photo icon (opens gallery popup) */}
+        {/* Photo icon with hover scale */}
         <img
           src="./appfiles/icons/Photo Default.svg"
           alt="photo"
-          className="cursor-pointer w-[50px]"
+          className="cursor-pointer w-[50px] transition-transform hover:scale-110"
           onClick={() => setShowGallery(true)}
         />
       </div>
+
 
       {/* Hidden audio element */}
       <audio
