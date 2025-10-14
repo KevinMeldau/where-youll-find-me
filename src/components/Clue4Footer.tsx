@@ -1,66 +1,125 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import Button from "../ui/Button.tsx";
 import { useNavigate } from "react-router";
 import Popup from "../ui/Popup.tsx";
 import GalleryPopup from "../ui/GalleryPopup.tsx";
 
+const AUDIO_SRC = "/audio/clue-4-the-line-between.mp3"; // file in /public/audio/
+
 const Clue4Footer = () => {
-   const [password, setPassword] = useState("");
-   const [showError, setShowError] = useState(false);
-   const [showGallery, setShowGallery] = useState(false);
-   const navigate = useNavigate();
+  const navigate = useNavigate();
+  const [password, setPassword] = useState("");
+  const [showError, setShowError] = useState(false);
+  const [showGallery, setShowGallery] = useState(false);
 
-   const handleNext = () => {
-      if (password == import.meta.env.VITE_CLUE4_PASSWORD) {
-         navigate("/clue5");
+  // audio controls
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  const togglePlay = async () => {
+    const audio = audioRef.current;
+    if (!audio) return;
+    try {
+      if (audio.paused) {
+        await audio.play();
+        setIsPlaying(true);
       } else {
-         setShowError(true);
+        audio.pause();
+        setIsPlaying(false);
       }
-   };
+    } catch (err) {
+      console.warn("Playback error:", err);
+    }
+  };
 
-   return (
-      <div className="px-4 py-5">
-         <div className="flex gap-3 justify-between max-w-[70%] mx-auto">
-            <img src="./appfiles/icons/Mic Default.svg" alt="mic" className={"w-[50px]"} />
-            <img src="./appfiles/icons/Music Default.svg" alt="music" className={"w-[50px]"} />
-            <img
-               src="./appfiles/icons/Photo Default.svg"
-               alt="photo"
-               className="cursor-pointer w-[50px]"
-               onClick={() => setShowGallery(true)}
-            />
-         </div>
+  const handleNext = () => {
+    const entered = password.trim().toLowerCase();
+    const correct = String(import.meta.env.VITE_CLUE4_PASSWORD || "").trim().toLowerCase();
+    if (entered === correct) {
+      navigate("/clue5");
+    } else {
+      setShowError(true);
+    }
+  };
 
-         <div className="mt-4">
-            <input
-               type="password"
-               value={password}
-               onChange={(e) => setPassword(e.target.value)}
-               className="border-gray-400 border rounded-md w-full px-3 py-2 outline-0 text-sm"
-               placeholder="Password"
-            />
+  return (
+    <div className="px-4 py-5">
+      {/* Icons row */}
+      <div className="flex gap-3 justify-between max-w-[70%] mx-auto">
+        {/* Mic icon (click to play voice note) */}
+        <button
+          type="button"
+          onClick={togglePlay}
+          aria-label={isPlaying ? "Pause voice note" : "Play voice note"}
+          title={isPlaying ? "Pause voice note" : "Play voice note"}
+          className="focus:outline-none transition-transform hover:scale-110"
+        >
+          <img
+            src="./appfiles/icons/Mic Default.svg"
+            alt="mic"
+            className={`w-[50px] ${isPlaying ? "opacity-70" : "opacity-100"}`}
+          />
+        </button>
 
-            <Button text="Next Clue" className="w-full mt-4" onClick={handleNext} />
-         </div>
+        {/* Music icon */}
+        <img
+          src="./appfiles/icons/Music Default.svg"
+          alt="music"
+          className="w-[50px]"
+        />
 
-         {/* Error Popup */}
-         <Popup
-            isOpen={showError}
-            onClose={() => setShowError(false)}
-            message="Wrong password, try again."
-         />
-
-         {/* Gallery Popup */}
-         <GalleryPopup
-            isOpen={showGallery}
-            onClose={() => setShowGallery(false)}
-         >
-            Look at the life we've built. The memories we've made. The places we’ve seen, some we dreamed about,
-            others we stumbled into. This is what love looks like when it's lived. When it's chosen, day after day.
-            This is us, laughing, exploring, figuring it out, holding on. <span className="font-bold text-primary">We made this.</span>
-         </GalleryPopup>
+        {/* Photo icon (opens gallery popup) */}
+        <img
+          src="./appfiles/icons/Photo Default.svg"
+          alt="photo"
+          className="cursor-pointer w-[50px]"
+          onClick={() => setShowGallery(true)}
+        />
       </div>
-   );
+
+      {/* Hidden audio element */}
+      <audio
+        ref={audioRef}
+        preload="auto"
+        className="hidden"
+        onEnded={() => setIsPlaying(false)}
+      >
+        <source src={AUDIO_SRC} type="audio/mpeg" />
+        Your browser does not support the audio element.
+      </audio>
+
+      {/* Password field + centered button */}
+      <div className="mt-4">
+        <input
+          type="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          className="border-gray-400 border rounded-md w-full px-3 py-2 outline-0 text-sm"
+          placeholder="Password"
+        />
+
+        <div className="flex justify-center mt-4">
+          <Button text="Next Clue" className="w-[200px]" onClick={handleNext} />
+        </div>
+      </div>
+
+      {/* Error Popup */}
+      <Popup
+        isOpen={showError}
+        onClose={() => setShowError(false)}
+        message="Wrong password, try again."
+      />
+
+      {/* Gallery Popup */}
+      <GalleryPopup isOpen={showGallery} onClose={() => setShowGallery(false)}>
+        Look at the life we've built. The memories we've made. The places we’ve
+        seen, some we dreamed about, others we stumbled into. This is what love
+        looks like when it's lived. When it's chosen, day after day. This is us,
+        laughing, exploring, figuring it out, holding on.{" "}
+        <span className="font-bold text-primary">We made this.</span>
+      </GalleryPopup>
+    </div>
+  );
 };
 
 export default Clue4Footer;
