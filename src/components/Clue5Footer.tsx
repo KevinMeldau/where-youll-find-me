@@ -14,26 +14,46 @@ const Clue5Footer = () => {
   const [showError, setShowError] = useState(false);
   const [showGallery, setShowGallery] = useState(false);
 
-  // audio controls
+  // audio controls (mobile-hardened)
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [playError, setPlayError] = useState<string | null>(null);
 
   // spotify embed toggle
   const [showPlayer, setShowPlayer] = useState(false);
 
-  const togglePlay = async () => {
+  const togglePlay = () => {
     const audio = audioRef.current;
     if (!audio) return;
+
+    setPlayError(null);
+
     try {
       if (audio.paused) {
-        await audio.play();
-        setIsPlaying(true);
+        // iOS/Safari: ensure play() is invoked directly off the tap
+        if (audio.currentTime === 0) {
+          try { audio.currentTime = 0.001; } catch {}
+        }
+        const p = audio.play();
+        if (p && typeof (p as Promise<void>).then === "function") {
+          (p as Promise<void>)
+            .then(() => setIsPlaying(true))
+            .catch(() =>
+              setPlayError(
+                "If you’re on iPhone, switch off Silent mode and turn volume up, then tap again."
+              )
+            );
+        } else {
+          setIsPlaying(true);
+        }
       } else {
         audio.pause();
         setIsPlaying(false);
       }
-    } catch (err) {
-      console.warn("Playback error:", err);
+    } catch {
+      setPlayError(
+        "Couldn’t start audio. On iPhone, flip the Silent switch off and raise volume, then tap again."
+      );
     }
   };
 
@@ -43,6 +63,7 @@ const Clue5Footer = () => {
     const correct = String(import.meta.env.VITE_CLUE6_PASSWORD || "")
       .trim()
       .toLowerCase();
+
     if (entered === correct) {
       navigate("/clue6");
     } else {
@@ -60,12 +81,12 @@ const Clue5Footer = () => {
           onClick={togglePlay}
           aria-label={isPlaying ? "Pause voice note" : "Play voice note"}
           title={isPlaying ? "Pause voice note" : "Play voice note"}
-          className="focus:outline-none transition-transform hover:scale-110"
+          className="cursor-pointer focus:outline-none transition-transform hover:scale-110"
         >
           <img
             src="./appfiles/icons/Mic Default.svg"
             alt="mic"
-            className={`w-[50px] ${isPlaying ? "opacity-70" : "opacity-100"}`}
+            className={`w-[50px] pointer-events-none ${isPlaying ? "opacity-70" : "opacity-100"}`}
           />
         </button>
 
@@ -77,7 +98,7 @@ const Clue5Footer = () => {
           aria-controls="spotify-embed"
           aria-label="Play Spotify playlist"
           title="Play Spotify playlist"
-          className="focus:outline-none transition-transform hover:scale-110"
+          className="cursor-pointer focus:outline-none transition-transform hover:scale-110"
         >
           <img
             src="./appfiles/icons/Music Default.svg"
@@ -94,6 +115,11 @@ const Clue5Footer = () => {
           onClick={() => setShowGallery(true)}
         />
       </div>
+
+      {/* Optional mobile playback error hint */}
+      {playError && (
+        <p className="mt-2 text-xs text-red-400 text-center">{playError}</p>
+      )}
 
       {/* Inline Spotify player (compact height: 152) */}
       {showPlayer && (
@@ -123,6 +149,8 @@ const Clue5Footer = () => {
         onEnded={() => setIsPlaying(false)}
       >
         <source src={AUDIO_SRC} type="audio/mpeg" />
+        {/* Optional AAC fallback for broader device support:
+            <source src="/audio/clue-5-the-currency-of-you.m4a" type="audio/aac" /> */}
         Your browser does not support the audio element.
       </audio>
 
