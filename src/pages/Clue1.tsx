@@ -28,9 +28,9 @@ const Clue1 = () => {
                   Pack a small bag. Just enough for two days, small enough so you don’t need to check it. Clothes that let you breathe, walk, nap. Layers you can shed if it gets warm. Skip the winter coat, you won’t need it.
                </li>
                <li>
-                  <span className="font-bold">No passport, just ID you can fly with, and a phone charger.</span>
+                  <span className="font-bold">No passport, just ID and a phone charger.</span>
                </li>
-               <li>Call a Lyft. Be at the airport by 8:30AM (November 15th).</li>
+               <li>Call a Lyft. Be at the airport by <span className="font-bold">8:30AM (November 15th)</span>.</li>
                <li>Go to the Frontier kiosk and print your boarding pass. Your confirmation code is: <span className="font-bold">UK879K</span>.</li>
                <li>Board your flight.</li>
                <li>

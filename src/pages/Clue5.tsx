@@ -34,7 +34,7 @@ const Clue5 = () => {
             </ol>
             <br />
             <p className="mb-4">
-               When you reach immigration, they might ask where you’re staying. <span className="font-bold">Don't cheat and open it unless they ask you.{" "}<br />
+               When you reach immigration, they might ask where you’re staying. <span className="font-bold">Don't cheat and open this unless they ask you.{" "}<br />
                Click{" "}
                <a href="/manage-reservation.pdf" target="_blank" rel="noopener noreferrer" className="text-pink-500 underline hover:text-pink-600 transition-colors">
                   this link

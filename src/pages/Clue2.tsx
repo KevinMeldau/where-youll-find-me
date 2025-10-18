@@ -17,7 +17,7 @@ const Clue2 = () => {
                Clue 2: Shadow Landing
             </h1>
             <p className="mb-4">
-               You’ve landed. You’re not just moving through terminals, you’re moving through a story. One that’s been hidden in the rhythm of small things, waiting for the right eyes to notice.
+               You’ve landed. You’re not just moving through terminals, you’re moving through a story. A story that started long before today.
             </p>
 
             <h2 className="text-lg font-semibold mb-2">What I need you to do:</h2>
@@ -26,7 +26,7 @@ const Clue2 = () => {
                   Make your way to the <span className="font-bold">Hilton Los Angeles Airport.</span> The address is: <span className="font-bold">5711 West Century Boulevard, Los Angeles</span>. Your room is waiting, just go to reception and get a key card.
                </li>
                <li>Eat something. Take a hot shower. Put your feet up. Sleep, you’re going to need it.</li>
-               <li>At 7:00PM (not before, I’ll know), open the safe in your room. The code for the safe is the <span className="font-bold">year you were born</span>. Inside the safe is what you’ll need to continue this adventure.</li>
+               <li><span className="font-bold">At 7:00PM (not before, I’ll know)</span>, open the safe in your room. The code for the safe is the <span className="font-bold">year you were born</span>. Inside the safe is what you’ll need to continue this adventure.</li>
                <li>
                   You’ll also find the password to your next clue (<span className="italic">Clearance to Dream</span>).
                </li>

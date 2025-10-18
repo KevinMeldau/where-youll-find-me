@@ -18,7 +18,7 @@ const Clue6 = () => {
             </h1>
 
             <p className="mb-4">
-               You made it. Across miles, across moments. Through every doubt you carried quietly. Past every wondering moment you didn’t speak aloud. Now there’s nothing left to solve. No more passwords. No more puzzles. Just this. The whole experience, the clues, the timing, the small surprises, it was never about keeping secrets. It was about giving you something no one else ever has: a story written entirely for you. With love. With intention. With care in every detail.
+               You made it. Across miles, across moments. Through every doubt you carried quietly. Past every wondering moment you didn’t speak aloud. Now there’s nothing left to solve. No more passwords. No more puzzles. Just this. The whole experience, the clues, the timing, the small surprises, it was never about keeping secrets. It was about giving you something no one else ever has:<span className="font-bold"> a story written entirely for you. With love. With intention. With care in every detail</span>.
             </p>
 
             <p className="mb-4">
