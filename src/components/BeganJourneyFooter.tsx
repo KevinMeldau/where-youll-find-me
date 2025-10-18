@@ -2,38 +2,25 @@ import { useRef, useState } from "react";
 import Button from "../ui/Button.tsx";
 import { useNavigate } from "react-router";
 
-const AUDIO_SRC = "/audio/hannah-voice-clip.mp3"; // file in /public/audio/
-// Add an AAC next to it: /public/audio/hannah-voice-clip.m4a
-
 const BeganJourneyFooter = () => {
   const navigate = useNavigate();
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   const [isPlaying, setIsPlaying] = useState(false);
-  const [playError, setPlayError] = useState<string | null>(null);
 
   const togglePlay = () => {
     const audio = audioRef.current;
     if (!audio) return;
 
-    setPlayError(null);
-
     try {
       if (audio.paused) {
-        // iOS nudge; call play() synchronously on the touch/click event
-        if (audio.currentTime === 0) {
-          try {
-            audio.currentTime = 0.001;
-          } catch {}
-        }
-        const p = audio.play();
-        if (p && typeof p.then === "function") {
-          p.then(() => setIsPlaying(true)).catch(() => {
-            // Common iOS cause: device in Silent/Ring = Silent, volume 0, or BT route
-            setPlayError(
-              "No sound? On iPhone: switch OFF Silent mode, raise the volume, and make sure you’re not routed to Bluetooth. Then tap the mic again."
-            );
-          });
+        const playPromise = audio.play();
+        if (playPromise && typeof playPromise.then === "function") {
+          playPromise
+            .then(() => setIsPlaying(true))
+            .catch((err) => {
+              console.warn("Playback error:", err);
+            });
         } else {
           setIsPlaying(true);
         }
@@ -41,10 +28,8 @@ const BeganJourneyFooter = () => {
         audio.pause();
         setIsPlaying(false);
       }
-    } catch {
-      setPlayError(
-        "Couldn’t start audio. On iPhone, turn off Silent mode and raise the volume, then tap again."
-      );
+    } catch (err) {
+      console.warn("Audio toggle error:", err);
     }
   };
 
@@ -58,7 +43,6 @@ const BeganJourneyFooter = () => {
   return (
     <div className="px-4 py-5">
       <div className="flex gap-3 items-center">
-        {/* Mic icon — add onTouchStart for iOS */}
         <button
           type="button"
           onClick={togglePlay}
@@ -84,11 +68,6 @@ const BeganJourneyFooter = () => {
         </div>
       </div>
 
-      {/* Helpful message if iOS blocks playback */}
-      {playError && (
-        <p className="mt-2 text-xs text-red-400 text-center">{playError}</p>
-      )}
-
       {/* Hidden audio element */}
       <audio
         ref={audioRef}
@@ -96,8 +75,7 @@ const BeganJourneyFooter = () => {
         className="hidden"
         onEnded={() => setIsPlaying(false)}
       >
-        <source src={AUDIO_SRC} type="audio/mpeg" />
-        {/* AAC fallback; ensure the file exists */}
+        <source src="/audio/hannah-voice-clip.mp3" type="audio/mpeg" />
         <source src="/audio/hannah-voice-clip.m4a" type="audio/aac" />
         Your browser does not support the audio element.
       </audio>

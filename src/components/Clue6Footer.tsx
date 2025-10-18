@@ -2,43 +2,30 @@ import { useRef, useState } from "react";
 import Popup from "../ui/Popup.tsx";
 import GalleryPopup from "../ui/GalleryPopup.tsx";
 
-const AUDIO_SRC = "/audio/clue-6-where-youll-find-me.mp3"; // file in /public/audio/
+const AUDIO_SRC = "/audio/clue-6-where-youll-find-me.mp3";
+const AAC_SRC = "/audio/clue-6-where-youll-find-me.m4a";
 const SPOTIFY_EMBED =
   "https://open.spotify.com/embed/playlist/755pqZrjUGTORjQTdb7Pcx?utm_source=generator";
 
 const Clue6Footer = () => {
   const [showError, setShowError] = useState(false);
   const [showGallery, setShowGallery] = useState(false);
-
-  // audio controls (mobile-hardened)
-  const audioRef = useRef<HTMLAudioElement | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
-  const [playError, setPlayError] = useState<string | null>(null);
-
-  // spotify embed toggle
   const [showPlayer, setShowPlayer] = useState(false);
+
+  const audioRef = useRef<HTMLAudioElement | null>(null);
 
   const togglePlay = () => {
     const audio = audioRef.current;
     if (!audio) return;
 
-    setPlayError(null);
-
     try {
       if (audio.paused) {
-        // iOS/Safari: ensure play() is invoked directly off the tap
-        if (audio.currentTime === 0) {
-          try { audio.currentTime = 0.001; } catch {}
-        }
         const p = audio.play();
-        if (p && typeof (p as Promise<void>).then === "function") {
-          (p as Promise<void>)
-            .then(() => setIsPlaying(true))
-            .catch(() =>
-              setPlayError(
-                "If you’re on iPhone, switch off Silent mode and turn volume up, then tap again."
-              )
-            );
+        if (p && typeof p.then === "function") {
+          p.then(() => setIsPlaying(true)).catch((err) => {
+            console.warn("Audio play error:", err);
+          });
         } else {
           setIsPlaying(true);
         }
@@ -46,10 +33,8 @@ const Clue6Footer = () => {
         audio.pause();
         setIsPlaying(false);
       }
-    } catch {
-      setPlayError(
-        "Couldn’t start audio. On iPhone, flip the Silent switch off and raise volume, then tap again."
-      );
+    } catch (err) {
+      console.warn("Playback error:", err);
     }
   };
 
@@ -61,6 +46,7 @@ const Clue6Footer = () => {
         <button
           type="button"
           onClick={togglePlay}
+          onTouchStart={togglePlay}
           aria-label={isPlaying ? "Pause voice note" : "Play voice note"}
           title={isPlaying ? "Pause voice note" : "Play voice note"}
           className="cursor-pointer focus:outline-none transition-transform hover:scale-110"
@@ -72,7 +58,7 @@ const Clue6Footer = () => {
           />
         </button>
 
-        {/* Music icon — toggles inline Spotify player (compact) */}
+        {/* Music icon */}
         <button
           type="button"
           onClick={() => setShowPlayer((v) => !v)}
@@ -89,7 +75,7 @@ const Clue6Footer = () => {
           />
         </button>
 
-        {/* Photo icon with hover scale */}
+        {/* Photo icon */}
         <img
           src="./appfiles/icons/Photo Default.svg"
           alt="photo"
@@ -98,12 +84,7 @@ const Clue6Footer = () => {
         />
       </div>
 
-      {/* Optional mobile playback error hint */}
-      {playError && (
-        <p className="mt-2 text-xs text-red-400 text-center">{playError}</p>
-      )}
-
-      {/* Inline Spotify player (compact height: 152) */}
+      {/* Spotify Player */}
       {showPlayer && (
         <div className="flex justify-center mt-4">
           <iframe
@@ -131,12 +112,11 @@ const Clue6Footer = () => {
         onEnded={() => setIsPlaying(false)}
       >
         <source src={AUDIO_SRC} type="audio/mpeg" />
-        {/* Optional AAC fallback for broader device support:
-            <source src="/audio/clue-6-where-youll-find-me.m4a" type="audio/aac" /> */}
+        <source src={AAC_SRC} type="audio/aac" />
         Your browser does not support the audio element.
       </audio>
 
-      {/* Error Popup (kept for consistency) */}
+      {/* Optional (unused) Error Popup */}
       <Popup
         isOpen={showError}
         onClose={() => setShowError(false)}
