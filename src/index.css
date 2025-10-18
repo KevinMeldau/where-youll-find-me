@@ -29,10 +29,29 @@ select {
   color: black; /* typed text color */
   background-color: white; /* or set a dark fill if you prefer */
   border-color: rgba(255,255,255,0.12); /* subtle border on dark bg */
+  border-radius: 0.5rem; /* Tailwind’s rounded-lg */
 }
 
 h1 {
   font-size: 18.5px;
+}
+
+/* ---------- Icon hover (for files under /icons/) ---------- */
+img[src*="icons/"] {
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+
+img[src*="icons/"]:hover {
+  transform: scale(1.1);
+}
+
+/* ---------- Ensure icon BUTTONS show pointer & clicks hit the button ---------- */
+button img[src*="icons/"] {
+  pointer-events: none; /* click targets the button, not the img */
+}
+button:hover {
+  cursor: pointer;      /* hand cursor on all buttons */
 }
 
 @theme {
