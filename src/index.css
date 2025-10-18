@@ -20,7 +20,7 @@ body {
   font-family: "Lora", serif;
   color: #6A6A6A;
   font-size: 16px;
-  background: linear-gradient(to bottom, #BFBFBF 0%, #F2F2F2 100%);
+  background: linear-gradient(to bottom, #FFE8D9 0%, white 100%);
 }
 
 input,
