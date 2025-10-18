@@ -3,6 +3,7 @@ import Button from "../ui/Button.tsx";
 import { useNavigate } from "react-router";
 
 const AUDIO_SRC = "/audio/hannah-voice-clip.mp3"; // file in /public/audio/
+// Add an AAC next to it: /public/audio/hannah-voice-clip.m4a
 
 const BeganJourneyFooter = () => {
   const navigate = useNavigate();
@@ -19,22 +20,20 @@ const BeganJourneyFooter = () => {
 
     try {
       if (audio.paused) {
-        // iOS: ensure play() is triggered directly on click
+        // iOS nudge; call play() synchronously on the touch/click event
         if (audio.currentTime === 0) {
           try {
             audio.currentTime = 0.001;
           } catch {}
         }
-
         const p = audio.play();
         if (p && typeof p.then === "function") {
-          p
-            .then(() => setIsPlaying(true))
-            .catch(() => {
-              setPlayError(
-                "If you’re on iPhone, switch off Silent mode and turn volume up, then tap again."
-              );
-            });
+          p.then(() => setIsPlaying(true)).catch(() => {
+            // Common iOS cause: device in Silent/Ring = Silent, volume 0, or BT route
+            setPlayError(
+              "No sound? On iPhone: switch OFF Silent mode, raise the volume, and make sure you’re not routed to Bluetooth. Then tap the mic again."
+            );
+          });
         } else {
           setIsPlaying(true);
         }
@@ -44,12 +43,11 @@ const BeganJourneyFooter = () => {
       }
     } catch {
       setPlayError(
-        "Couldn’t start audio. On iPhone, flip the Silent switch off and raise volume, then tap again."
+        "Couldn’t start audio. On iPhone, turn off Silent mode and raise the volume, then tap again."
       );
     }
   };
 
-  // Allow keyboard (Enter/Space) on the mic button
   const onKey = (e: React.KeyboardEvent<HTMLButtonElement>) => {
     if (e.key === "Enter" || e.key === " ") {
       e.preventDefault();
@@ -60,10 +58,11 @@ const BeganJourneyFooter = () => {
   return (
     <div className="px-4 py-5">
       <div className="flex gap-3 items-center">
-        {/* Mic icon — same size as clue icons, with hover animation */}
+        {/* Mic icon — add onTouchStart for iOS */}
         <button
           type="button"
           onClick={togglePlay}
+          onTouchStart={togglePlay}
           onKeyDown={onKey}
           aria-pressed={isPlaying}
           aria-label={isPlaying ? "Pause voice note" : "Play voice note"}
@@ -73,23 +72,24 @@ const BeganJourneyFooter = () => {
           <img
             src="./appfiles/icons/Mic Default.svg"
             alt="mic"
-            className="w-[50px] pointer-events-none"
+            className={`w-[50px] pointer-events-none ${
+              isPlaying ? "opacity-70" : "opacity-100"
+            }`}
           />
         </button>
 
-        {/* Text block — like the original */}
         <div>
           <p className="font-bold">Voice note from Hannah</p>
           <p>{isPlaying ? "Playing…" : "Play me!"}</p>
         </div>
       </div>
 
-      {/* Optional mobile playback error hint */}
+      {/* Helpful message if iOS blocks playback */}
       {playError && (
         <p className="mt-2 text-xs text-red-400 text-center">{playError}</p>
       )}
 
-      {/* Hidden audio element (no native controls) */}
+      {/* Hidden audio element */}
       <audio
         ref={audioRef}
         preload="auto"
@@ -97,8 +97,8 @@ const BeganJourneyFooter = () => {
         onEnded={() => setIsPlaying(false)}
       >
         <source src={AUDIO_SRC} type="audio/mpeg" />
-        {/* Optional AAC fallback for better iOS compatibility */}
-        {/* <source src={AUDIO_SRC.replace(".mp3", ".m4a")} type="audio/aac" /> */}
+        {/* AAC fallback; ensure the file exists */}
+        <source src="/audio/hannah-voice-clip.m4a" type="audio/aac" />
         Your browser does not support the audio element.
       </audio>
 
@@ -110,7 +110,6 @@ const BeganJourneyFooter = () => {
         />
       </div>
 
-      {/* Screen reader status (kept visually hidden) */}
       <span className="sr-only" aria-live="polite">
         {isPlaying ? "Voice note playing" : "Voice note paused"}
       </span>
