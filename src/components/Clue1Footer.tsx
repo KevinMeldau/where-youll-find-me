@@ -139,7 +139,7 @@ const Clue1Footer = () => {
       <Popup
         isOpen={showError}
         onClose={() => setShowError(false)}
-        message="Wrong password, try again."
+        message="That’s not quite right — try again ❤️"
       />
 
       {/* Gallery Popup */}
