@@ -22,13 +22,13 @@ const Clue1 = () => {
             <h2 className="text-lg font-semibold mb-2">What I need you to do:</h2>
             <ol className="list-decimal pl-6 space-y-2 marker:font-bold">
                <li>
-                  <span className="font-bold">Bookmark this site on your phone now.</span>
+                  <span className="font-bold">Bookmark this site</span> on your phone now.
                </li>
                <li>
-                  Pack a small bag. Just enough for two days, small enough so you don’t need to check it. Clothes that let you breathe, walk, nap. Layers you can shed if it gets warm. Skip the winter coat, you won’t need it.
+                  <span className="font-bold">Pack a small bag</span>. Just enough for two days, small enough so you don’t need to check it. Clothes that let you breathe, walk, nap. Layers you can shed if it gets warm. Skip the winter coat, you won’t need it.
                </li>
                <li>
-                  <span className="font-bold">No passport, just ID and a phone charger.</span>
+                  <span className="font-bold">No passport, just ID, a phone charger, and your laptop</span> so that you're able to do your Fullbright work.
                </li>
                <li>Call a Lyft. Be at the airport by <span className="font-bold">8:30AM (November 15th)</span>.</li>
                <li>Go to the Frontier kiosk and print your boarding pass. Your confirmation code is: <span className="font-bold">UK879K</span>.</li>
