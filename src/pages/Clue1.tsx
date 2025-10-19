@@ -67,7 +67,7 @@ const Clue1 = () => {
                   <span className="font-bold">8:30AM (November 15th)</span>.
                </li>
                <li className="space-y-2">
-                  <div>Go to the Frontier kiosk and print your boarding pass.</div>
+                  <div>When you walk inside, go to the <span className="font-bold">information desk</span> and show them your ID and confirmation number (below). They’ll point you to the right kiosk to print your boarding pass.</div>
                   <CopyChip label="Confirmation code" value="UK879K" />
                </li>
                <li>Board your flight.</li>
