@@ -38,10 +38,9 @@ const Clue5 = () => {
             <br />
 
             <p className="mb-4">
-               When you reach immigration, they might ask where you’re staying.{" "}
-               <span className="font-bold">
-                  Don't cheat and open this unless they ask you.
-                  <br />
+               When you reach immigration, they might ask where you’re staying. Here is the address: {" "}
+               <span className="font-bold">Hilton Hotel Tahiti, BP 60-98713, Faa’a, Papeete 98713, Tahiti, French Polynesia.</span>
+                  <br /><br />
                   Click{" "}
                   <a
                      href="/manage-reservation.pdf"
@@ -52,7 +51,6 @@ const Clue5 = () => {
                      this link
                   </a>{" "}
                   and show them our hotel booking.
-               </span>
             </p>
          </div>
          <Clue5Footer />
