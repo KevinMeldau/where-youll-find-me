@@ -31,7 +31,7 @@ const BeganJourneyFooter = () => {
 
       <div className="flex justify-center mt-4">
         <Button
-          text="Begin this adventure"
+          text="Start this adventure"
           className="w-full"
           onClick={() => navigate("/clue1")}
         />

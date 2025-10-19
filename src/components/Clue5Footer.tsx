@@ -84,7 +84,7 @@ const Clue5Footer = () => {
           placeholder="Password"
         />
         <div className="flex justify-center mt-4">
-          <Button text="Next Clue" className="w-full" onClick={handleNext} />
+          <Button text="Next clue" className="w-full" onClick={handleNext} />
         </div>
       </div>
 
