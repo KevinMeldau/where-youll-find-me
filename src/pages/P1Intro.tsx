@@ -20,7 +20,7 @@ const P1Intro = () => {
                we’ll tell for the rest of our lives.
             </p>
             <p className="mb-4">
-               This is the biggest love letter I’ve ever written you. And it isn’t written in ink. It’s
+               <span className="font-bold">This is the biggest love letter I’ve ever written you</span>. And it isn’t written in ink. It’s
                written in motion, in silence, in details only you would notice. It’s not on paper, it’s in
                the journey. It’s written in small risks and big leaps. In the faith that love, when trusted,
                can become an adventure.
