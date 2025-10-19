@@ -18,7 +18,10 @@ const Clue6 = () => {
             </h1>
 
             <p className="mb-4">
-               You made it. Across miles, across moments. Through every doubt you carried quietly. Past every wondering moment you didn’t speak aloud. Now there’s nothing left to solve. No more passwords. No more puzzles. Just this. The whole experience, the clues, the timing, the small surprises, it was never about keeping secrets. It was about giving you something no one else ever has:<span className="font-bold"> a story written entirely for you. With love. With intention. With care in every detail</span>.
+               You made it. Across miles, across moments. Through every doubt you carried quietly. Past every wondering moment you didn’t speak aloud. Now there’s nothing left to solve. No more passwords. No more puzzles. Just this. The whole experience, the clues, the timing, the small surprises, it was never about keeping secrets. It was about giving you something no one else ever has:
+               <span className="font-bold">
+                  {" "}a story written entirely for you. With love. With intention. With care in every detail
+               </span>.
             </p>
 
             <p className="mb-4">
@@ -28,10 +31,19 @@ const Clue6 = () => {
             <h2 className="text-lg font-semibold mb-2">What I need you to do:</h2>
             <ol className="list-decimal pl-6 space-y-2 marker:font-bold">
                <li>
-                  When you come out of customs, look for someone holding a sign with your name on it. Go with them.
+                  When you exit customs, someone will be waiting with your name on a sign. Follow them, you’re in good hands.
                </li>
                <li>
-                  When you get to the hotel, head to the <span className="font-bold">Vaipuna Pool Bar</span>.
+                  When you get to the hotel, head to the{" "}
+                  <a
+                     href="https://www.hilton.com/en/hotels/ppthihh-hilton-hotel-tahiti/dining/"
+                     target="_blank"
+                     rel="noopener noreferrer"
+                     className="font-bold underline hover:text-primary"
+                  >
+                     Vaipuna Pool Bar
+                  </a>
+                  .
                </li>
                <li>
                   Sit down. Put down your phone. Take a breath. Take a look around.

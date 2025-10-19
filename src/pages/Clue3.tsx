@@ -1,5 +1,44 @@
 import { Link } from "react-router";
+import { useState } from "react";
 import Clue3Footer from "../components/Clue3Footer.tsx";
+
+const CopyChip = ({
+  label,
+  value,
+}: {
+  label: string;
+  value: string;
+}) => {
+  const [copied, setCopied] = useState(false);
+
+  const handleCopy = async () => {
+    try {
+      await navigator.clipboard.writeText(value);
+      setCopied(true);
+      // brief reset
+      setTimeout(() => setCopied(false), 1500);
+    } catch {
+      // no toast, just fail silently
+    }
+  };
+
+  return (
+    <div className="inline-flex items-center gap-2 rounded-full border border-gray-300 px-3 py-1 align-middle">
+      <span className="text-sm">
+        <span className="font-semibold">{label}:</span>{" "}
+        <span className="font-mono">{value}</span>
+      </span>
+      <button
+        type="button"
+        onClick={handleCopy}
+        className="text-sm underline hover:no-underline focus:outline-none"
+        aria-label={`Copy ${label.toLowerCase()}`}
+      >
+        {copied ? "Copied" : "Copy"}
+      </button>
+    </div>
+  );
+};
 
 const Clue3 = () => {
    return (
@@ -22,12 +61,16 @@ const Clue3 = () => {
             </p>
 
             <h2 className="text-lg font-semibold mb-2">What I need you to do:</h2>
-            <ol className="list-decimal pl-6 space-y-2 marker:font-bold">
+            <ol className="list-decimal pl-6 space-y-3 marker:font-bold">
                <li>
                   Go back to <span className="font-bold">LAX</span>, be there by <span className="font-bold">8:30PM (November 15th).</span>
                </li>
-               <li>
-                  When you get there, go to the Delta kiosk and print your boarding pass. Your ticket number is: <span className="font-bold">0062364065840</span>. Your confirmation code is: <span className="font-bold">GEYSQL</span>.
+               <li className="space-y-2">
+                  <div>When you get there, go to the Delta kiosk and print your boarding pass.</div>
+                  <div className="flex flex-wrap gap-2">
+                    <CopyChip label="Ticket number" value="0062364065840" />
+                    <CopyChip label="Confirmation code" value="GEYSQL" />
+                  </div>
                </li>
                <li>
                   <span className="font-bold">Make sure you sign up for wifi for this flight.</span>
