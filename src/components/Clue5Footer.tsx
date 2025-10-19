@@ -1,11 +1,10 @@
-import { useRef, useState } from "react";
+import { useState } from "react";
 import Button from "../ui/Button.tsx";
 import { useNavigate } from "react-router";
 import Popup from "../ui/Popup.tsx";
 import GalleryPopup from "../ui/GalleryPopup.tsx";
 
-const AUDIO_SRC = "/audio/clue-5-the-currency-of-you.mp3";
-const AAC_SRC = "/audio/clue-5-the-currency-of-you.m4a";
+const AUDIO_LINK = "/audio/clue-5-the-currency-of-you.mp3";
 const SPOTIFY_LINK =
   "https://open.spotify.com/playlist/755pqZrjUGTORjQTdb7Pcx?utm_source=generator";
 
@@ -14,32 +13,6 @@ const Clue5Footer = () => {
   const [password, setPassword] = useState("");
   const [showError, setShowError] = useState(false);
   const [showGallery, setShowGallery] = useState(false);
-  const [isPlaying, setIsPlaying] = useState(false);
-
-  const audioRef = useRef<HTMLAudioElement | null>(null);
-
-  const togglePlay = () => {
-    const audio = audioRef.current;
-    if (!audio) return;
-
-    try {
-      if (audio.paused) {
-        const p = audio.play();
-        if (p && typeof p.then === "function") {
-          p.then(() => setIsPlaying(true)).catch((err) => {
-            console.warn("Audio play error:", err);
-          });
-        } else {
-          setIsPlaying(true);
-        }
-      } else {
-        audio.pause();
-        setIsPlaying(false);
-      }
-    } catch (err) {
-      console.warn("Playback error:", err);
-    }
-  };
 
   const handleNext = () => {
     const entered = password.trim().toLowerCase();
@@ -57,23 +30,23 @@ const Clue5Footer = () => {
     <div className="px-4 py-5">
       {/* Icons row */}
       <div className="flex gap-3 justify-between max-w-[70%] mx-auto">
-        {/* Mic icon */}
-        <button
-          type="button"
-          onClick={togglePlay}
-          onTouchStart={togglePlay}
-          aria-label={isPlaying ? "Pause voice note" : "Play voice note"}
-          title={isPlaying ? "Pause voice note" : "Play voice note"}
+        {/* Mic icon opens audio in new tab */}
+        <a
+          href={AUDIO_LINK}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Play voice note (opens in a new tab)"
+          title="Play voice note"
           className="cursor-pointer focus:outline-none transition-transform hover:scale-110"
         >
           <img
             src="./appfiles/icons/Mic Default.svg"
             alt="mic"
-            className={`w-[50px] pointer-events-none ${isPlaying ? "opacity-70" : "opacity-100"}`}
+            className="w-[50px] pointer-events-none"
           />
-        </button>
+        </a>
 
-        {/* Music icon now opens Spotify app */}
+        {/* Music icon opens Spotify app */}
         <a
           href={SPOTIFY_LINK}
           target="_blank"
@@ -97,18 +70,6 @@ const Clue5Footer = () => {
           onClick={() => setShowGallery(true)}
         />
       </div>
-
-      {/* Hidden audio element */}
-      <audio
-        ref={audioRef}
-        preload="auto"
-        className="hidden"
-        onEnded={() => setIsPlaying(false)}
-      >
-        <source src={AUDIO_SRC} type="audio/mpeg" />
-        <source src={AAC_SRC} type="audio/aac" />
-        Your browser does not support the audio element.
-      </audio>
 
       {/* Password field */}
       <div className="mt-4">
