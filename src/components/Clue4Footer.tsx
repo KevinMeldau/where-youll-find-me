@@ -6,8 +6,8 @@ import GalleryPopup from "../ui/GalleryPopup.tsx";
 
 const AUDIO_SRC = "/audio/clue-4-the-line-between.mp3";
 const AAC_SRC = "/audio/clue-4-the-line-between.m4a";
-const SPOTIFY_EMBED =
-  "https://open.spotify.com/embed/playlist/755pqZrjUGTORjQTdb7Pcx?utm_source=generator";
+const SPOTIFY_LINK =
+  "https://open.spotify.com/playlist/755pqZrjUGTORjQTdb7Pcx?utm_source=generator";
 
 const Clue4Footer = () => {
   const navigate = useNavigate();
@@ -15,7 +15,6 @@ const Clue4Footer = () => {
   const [showError, setShowError] = useState(false);
   const [showGallery, setShowGallery] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
-  const [showPlayer, setShowPlayer] = useState(false);
 
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
@@ -70,18 +69,19 @@ const Clue4Footer = () => {
           <img
             src="./appfiles/icons/Mic Default.svg"
             alt="mic"
-            className={`w-[50px] pointer-events-none ${isPlaying ? "opacity-70" : "opacity-100"}`}
+            className={`w-[50px] pointer-events-none ${
+              isPlaying ? "opacity-70" : "opacity-100"
+            }`}
           />
         </button>
 
-        {/* Music icon */}
-        <button
-          type="button"
-          onClick={() => setShowPlayer((v) => !v)}
-          aria-expanded={showPlayer}
-          aria-controls="spotify-embed"
-          aria-label="Play Spotify playlist"
-          title="Play Spotify playlist"
+        {/* Music icon now opens Spotify app */}
+        <a
+          href={SPOTIFY_LINK}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Open Spotify playlist"
+          title="Open Spotify playlist"
           className="cursor-pointer focus:outline-none transition-transform hover:scale-110"
         >
           <img
@@ -89,7 +89,7 @@ const Clue4Footer = () => {
             alt="music"
             className="w-[50px] pointer-events-none"
           />
-        </button>
+        </a>
 
         {/* Photo icon */}
         <img
@@ -99,26 +99,6 @@ const Clue4Footer = () => {
           onClick={() => setShowGallery(true)}
         />
       </div>
-
-      {/* Spotify Player */}
-      {showPlayer && (
-        <div className="flex justify-center mt-4">
-          <iframe
-            id="spotify-embed"
-            data-testid="embed-iframe"
-            style={{ borderRadius: 12 }}
-            src={SPOTIFY_EMBED}
-            width="100%"
-            height="152"
-            frameBorder={0}
-            allowFullScreen
-            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-            loading="lazy"
-            className="max-w-md w-full"
-            title="Spotify Playlist"
-          />
-        </div>
-      )}
 
       {/* Hidden audio element */}
       <audio
