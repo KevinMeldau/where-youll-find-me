@@ -18,7 +18,7 @@ const Clue4 = () => {
             </h1>
 
             <p className="mb-4">
-               You’re in the air now, somewhere between yesterday and whatever comes next. This isn’t a clue you can rush. It’s one you have to feel. It doesn’t speak loudly. It waits to be heard by you and only you. Because the answer isn’t something I can give you directly. It’s something you’ll find in the music, in the space between words. In a line someone else wrote, but I chose for a reason.
+               You’re in the air now, somewhere between yesterday and whatever comes next. This isn’t a clue you can rush. It’s one you have to feel.<br />It doesn’t speak loudly. It waits to be heard by you and only you. Because the answer isn’t something I can give you directly. It’s something you’ll find in the music, in the space between words. In a line someone else wrote, but I chose for a reason.
             </p>
 
             <h2 className="text-lg font-semibold mb-2">What I need you to do:</h2>
