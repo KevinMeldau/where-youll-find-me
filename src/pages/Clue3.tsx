@@ -68,8 +68,8 @@ const Clue3 = () => {
                <li className="space-y-2">
                   <div>When you get there, go to the Delta kiosk and print your boarding pass.</div>
                   <div className="flex flex-wrap gap-2">
-                    <CopyChip label="Ticket number" value="0062364065840" />
                     <CopyChip label="Confirmation code" value="GEYSQL" />
+                    <CopyChip label="Ticket number" value="0062364065840" />
                   </div>
                </li>
                <li>Board your flight.<span className="font-bold"> Make sure you sign up for wifi for this flight.</span></li>
