@@ -49,7 +49,7 @@ const Clue1 = () => {
                Clue 1: Runway Rendezvous
             </h1>
             <p className="mb-4">
-               You didn’t wake up expecting this. But here you are, standing at the edge of something real, exciting, and just a little bit wild. You've always been brave. I’m just giving you a story that deserves your courage. I know this might feel fast. Surreal. Slightly insane. Maybe very insane. But you’re not alone in this, I’ve thought through every step. The next page of this story isn’t in your hands yet… it’s waiting in the clouds.
+               You didn’t wake up expecting this. But here you are, standing at the edge of something real, exciting, and just a little bit wild. You've always been brave. I’m just giving you a story that deserves your courage. I know this might feel fast. Surreal. Slightly insane. Maybe very insane.<br />But you’re not alone in this, I’ve thought through every step. The next page of this story isn’t in your hands yet… it’s waiting in the clouds.
             </p>
             <h2 className="text-lg font-semibold mb-2">What I need you to do:</h2>
             <ol className="list-decimal pl-6 space-y-3 marker:font-bold">
