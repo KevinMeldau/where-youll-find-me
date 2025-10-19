@@ -77,6 +77,9 @@ const Clue4Footer = () => {
           type="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
+          onKeyDown={(e) => {
+            if (e.key === "Enter") handleNext();
+          }}
           className="border-gray-400 border rounded-md w-full px-3 py-2 outline-0 text-sm"
           placeholder="Password"
         />
