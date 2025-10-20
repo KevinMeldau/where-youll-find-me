@@ -34,9 +34,7 @@ const Clue5 = () => {
                   <span className="font-mono">USD</span>.
                </li>
             </ol>
-
             <br />
-
             <p className="mb-4">
                When you reach immigration, they might ask where you’re staying. Here is the address: {" "}
                <span className="font-bold">Hilton Hotel Tahiti, BP 60-98713, Faa’a, Papeete 98713, Tahiti</span>.
@@ -52,6 +50,27 @@ const Clue5 = () => {
                   </a>{" "}
                   and show them our hotel booking.
             </p>
+            <p>They might also ask how long we’ll be in French Polynesia and what our plans are. We’re staying for two weeks. Here’s our itinerary:</p>
+            <br/>
+            <ul className="list-decimal pl-6 space-y-2 marker:font-bold">
+               <li>
+                  <span className="font-bold">Tahiti:</span> Nov 15th–17th
+               </li>
+               <li>
+                  <span className="font-bold">Moorea:</span> Nov 17th–22nd
+               </li>
+               <li>
+                  <span className="font-bold">Bora Bora:</span> Nov 22nd–30th
+               </li>
+               <li>
+                  <span className="font-bold">Back to Papeete:</span> Nov 30th
+               </li>
+               <li>
+                  <span className="font-bold">Fly home:</span> Dec 1st
+               </li>
+            </ul>
+            <br/>
+            <p>We’ll be island hoping and have not booked all the accomodation for the various islands. The reason for this is we may feel like switching this up a bit.</p>
          </div>
          <Clue5Footer />
       </div>
