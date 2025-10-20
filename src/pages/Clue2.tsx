@@ -35,13 +35,18 @@ const Clue2 = () => {
                   . The address is:{" "}
                   <span className="font-bold">
                      5711 West Century Boulevard, Los Angeles
-                  </span>
-                  . Your room is waiting, just go to reception and get a key card.
+                  </span>.
+                  <br />
+                  Your room is waiting, just go to reception and get a key card.
                </li>
-               <li>Eat something. Take a hot shower. Put your feet up. Sleep, you’re going to need it.</li>
+               <li>Eat something. Take a hot shower. Put your feet up.
+                  <br />
+                  Sleep, you’re going to need it.</li>
                <li>
                   <span className="font-bold">At 7:00PM (not before, I’ll know)</span>, open the safe in your room. The code for the safe is the{" "}
-                  <span className="font-bold">year you were born</span>. Inside the safe is what you’ll need to continue this adventure.
+                  <span className="font-bold">year you were born</span>.
+                  <br />
+                  Inside the safe is what you’ll need to continue this adventure.
                </li>
                <li>
                   You’ll also find the password to your next clue (<span className="italic">Clearance to Dream</span>).

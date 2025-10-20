@@ -27,7 +27,9 @@ const P1Intro = () => {
             </p>
             <p>
                You’re not going to work on Monday, I’ve spoken to Hannah about this (listen to her voice recording below).<br /><br />Take a
-               breath. Let the noise fall away. Then jump in, heart first. <span className="font-bold">I will not reply to your
+               breath. Let the noise fall away. Then jump in, heart first. <span className="font-bold">
+               <br />
+               I will not reply to your
                messages, not yet anyway.</span> But I’m here. In every word. This is real. It’s happening. And it’s all for
                you.
             </p>
