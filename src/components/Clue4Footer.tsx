@@ -1,6 +1,5 @@
 import { useState } from "react";
 import Button from "../ui/Button.tsx";
-import { useNavigate } from "react-router";
 import Popup from "../ui/Popup.tsx";
 import GalleryPopup from "../ui/GalleryPopup.tsx";
 
@@ -9,18 +8,14 @@ const SPOTIFY_LINK =
   "https://open.spotify.com/playlist/755pqZrjUGTORjQTdb7Pcx?utm_source=generator";
 
 const Clue4Footer = () => {
-  const navigate = useNavigate();
   const [password, setPassword] = useState("");
   const [showError, setShowError] = useState(false);
   const [showGallery, setShowGallery] = useState(false);
 
   const handleNext = () => {
-    const entered = password.trim().toLowerCase();
-    const correct = String(import.meta.env.VITE_CLUE4_PASSWORD || "")
-      .trim()
-      .toLowerCase();
-    if (entered === correct) {
-      navigate("/clue5");
+    // Any non-empty input works
+    if (password.trim().length > 0) {
+      window.location.href = "/clue5"; // go to your real next route
     } else {
       setShowError(true);
     }
@@ -40,7 +35,7 @@ const Clue4Footer = () => {
           className="cursor-pointer focus:outline-none transition-transform hover:scale-110"
         >
           <img
-            src="./appfiles/icons/Mic Default.svg"
+            src="/appfiles/icons/Mic Default.svg"
             alt="mic"
             className="w-[50px] pointer-events-none"
           />
@@ -56,7 +51,7 @@ const Clue4Footer = () => {
           className="cursor-pointer focus:outline-none transition-transform hover:scale-110"
         >
           <img
-            src="./appfiles/icons/Music Default.svg"
+            src="/appfiles/icons/Music Default.svg"
             alt="music"
             className="w-[50px] pointer-events-none"
           />
@@ -64,7 +59,7 @@ const Clue4Footer = () => {
 
         {/* Photo icon */}
         <img
-          src="./appfiles/icons/Photo Default.svg"
+          src="/appfiles/icons/Photo Default.svg"
           alt="photo"
           className="cursor-pointer w-[50px] transition-transform hover:scale-110"
           onClick={() => setShowGallery(true)}
