@@ -15,21 +15,16 @@ const P1Intro = () => {
             </h1>
             <p className="mb-4">
                You’re about to do something bold. A little wild.<br />A little scary. And, if you let it,
-               something unforgettable. I need you to trust me. I’ve spent months dreaming this into
-               place, planning, checking, re-checking. Not just to keep you safe, but to give us a story
-               we’ll tell for the rest of our lives.
+               something unforgettable. I need you to trust me.
             </p>
             <p className="mb-4">
                <span className="font-bold">This is the biggest love letter I’ve ever written you</span>. And it isn’t written in ink. It’s
-               written in motion, in silence, in details only you would notice. It’s not on paper, it’s in
-               the journey. It’s written in small risks and big leaps. In the faith that love, when trusted,
-               can become an adventure.
+               written in the details only you would notice.
             </p>
             <p>
-               You’re not going to work on Monday, I’ve spoken to Hannah about this (listen to her voice recording below).<br /><br />Take a
-               breath. Let the noise fall away. Then jump in, heart first. <span className="font-bold">
-               <br />
-               I will not reply to your
+               <span className="font-bold">You’re not going to work on Monday</span> , I’ve spoken to Hannah about this (listen to her voice recording below).
+               <br /><br />
+               <span className="font-bold">I will not reply to your
                messages, not yet anyway.</span> But I’m here. In every word. This is real. It’s happening. And it’s all for
                you.
             </p>
