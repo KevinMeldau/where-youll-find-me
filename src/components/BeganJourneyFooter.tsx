@@ -32,7 +32,7 @@ const BeganJourneyFooter = () => {
       {/* --- Key Section --- */}
       <section id="key" className="mt-5 pt-4 border-t border-[#6A6A6A]/15">
         <h2 className="text-lg font-semibold mb-4">
-          What the icons mean
+          What the icons mean:
         </h2>
 
         <div className="space-y-4">
