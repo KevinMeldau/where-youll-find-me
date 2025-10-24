@@ -20,7 +20,7 @@ const P1Intro = () => {
                written in the details only you would notice.
             </p>
             <p>
-               <span className="font-bold">You’re not going to work on Monday</span> , I’ve spoken to Hannah about this (listen to her voice recording below).
+               <span className="font-bold">You’re not going to work on Monday</span>, I’ve spoken to Hannah about this (listen to her voice recording below).
                <br /><br />
                <span className="font-bold">I will not reply to your
                messages, not yet anyway.</span> This is real. It’s happening. And it’s all for
