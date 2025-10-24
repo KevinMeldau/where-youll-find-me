@@ -45,7 +45,7 @@ const BeganJourneyFooter = () => {
               className="w-[38px] shrink-0 transition-transform hover:scale-110"
             />
             <p className="text-sm leading-snug">
-              <strong>Voice clip</strong>: Tap to hear a voice message from me guiding you.
+              <strong>Voice clip</strong>: Opens a voice clip from me, guiding you.
             </p>
           </div>
 
