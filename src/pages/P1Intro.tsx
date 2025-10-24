@@ -9,7 +9,7 @@ const P1Intro = () => {
          </div>
 
          {/* Scrollable text area */}
-         <div className="overflow-y-auto flex-1 mt-4 px-4">
+         <div className="overflow-y-auto flex-1 mt-2 px-4">
             <h1 className="text-xl font-bold mb-2">
                From the start, this was more than a trip. It’s a story I’ve been writing for you.
             </h1>
