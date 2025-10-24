@@ -76,7 +76,7 @@ const Clue4Footer = () => {
             if (e.key === "Enter") handleNext();
           }}
           className="border-gray-400 border rounded-md w-full px-3 py-2 outline-0 text-sm"
-          placeholder="Password"
+          placeholder="Password: (CAPS and lowercase both work)"
         />
         <div className="flex justify-center mt-4">
           <Button text="Next clue" className="w-full" onClick={handleNext} />

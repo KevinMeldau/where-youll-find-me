@@ -26,7 +26,7 @@ body {
 input,
 textarea,
 select {
-  color: black; /* typed text color */
+  color: #999; /* typed text color */
   background-color: white; /* or set a dark fill if you prefer */
   border-color: #BEBEBE;
   border-radius: 0.5rem; /* Tailwind’s rounded-lg */
