@@ -25,7 +25,7 @@ const BeganJourneyFooter = () => {
 
         <div>
           <p className="font-bold">Voice note from Hannah</p>
-          <p className="text-sm">(All voice messages open in a new tab)</p>
+          <p>(All voice messages open in a new tab)</p>
         </div>
       </div>
 
