@@ -31,7 +31,7 @@ const Clue4 = () => {
                   That’s your password to your next clue (<span className="italic">The Currency of You</span>). 
                   Type it in as it’s sung. No quotes. No punctuation. Just the words, for example: <span className="font-mono">all of me loves all of you</span>.
                   <br/>
-                  <span className="font-bold"> Don’t worry, there’s more than one right answer.</span>.
+                  <span className="font-bold"> Don’t worry, there’s more than one right answer</span>.
                </li>
             </ol>
          </div>
