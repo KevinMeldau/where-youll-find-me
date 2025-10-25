@@ -94,7 +94,7 @@ const Clue5 = () => {
         </p>
 
         <p>
-          We’ll be island hopping and have not booked all the accommodation for the various islands. The reason for this is we may feel like switching this up a bit.
+          We’re island hopping and staying flexible with where we stay.
         </p>
       </div>
 
