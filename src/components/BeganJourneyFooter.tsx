@@ -32,7 +32,7 @@ const BeganJourneyFooter = () => {
       {/* --- Key Section --- */}
       <section id="key" className="mt-5 pt-4 border-t border-[#6A6A6A]/15">
         <h2 className="text-lg font-semibold mb-4">
-          What the icons mean:
+          What the icons on the next page mean:
         </h2>
 
         <div className="space-y-4">
@@ -44,7 +44,7 @@ const BeganJourneyFooter = () => {
               title="Voice clip"
               className="w-[38px] shrink-0 transition-transform hover:scale-110"
             />
-            <p className="text-sm leading-snug">
+            <p className="leading-snug">
               <strong>Voice clip</strong>: Opens a voice clip from me, guiding you.
             </p>
           </div>
@@ -57,7 +57,7 @@ const BeganJourneyFooter = () => {
               title="Playlist"
               className="w-[38px] shrink-0 transition-transform hover:scale-110"
             />
-            <p className="text-sm leading-snug">
+            <p className="leading-snug">
               <strong>Playlist</strong>: Opens a Spotify playlist, my “mixed tape” to you.
             </p>
           </div>
@@ -70,7 +70,7 @@ const BeganJourneyFooter = () => {
               title="Images"
               className="w-[38px] shrink-0 transition-transform hover:scale-110"
             />
-            <p className="text-sm leading-snug">
+            <p className="leading-snug">
               <strong>Images</strong>: Opens a photo gallery of the life we've created.
             </p>
           </div>
