@@ -36,7 +36,7 @@ const Clue5 = () => {
 
         <br />
 
-        <h2 className="text-lg font-semibold mb-2">Information for Immigration</h2>
+        <h2 className="text-lg font-semibold mb-2">Information for Immigration:</h2>
         <p className="mb-4">
           When you reach immigration, they might ask where you’re staying. Here is the address:
           <span className="font-bold"> Hilton Hotel Tahiti, BP 60-98713, Faa’a, Papeete 98713, Tahiti</span>.
