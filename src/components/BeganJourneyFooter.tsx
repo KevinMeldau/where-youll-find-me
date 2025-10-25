@@ -30,7 +30,7 @@ const BeganJourneyFooter = () => {
       </div>
 
       {/* --- Key Section --- */}
-      <section id="key" className="mt-5 pt-4 border-t border-[#6A6A6A]/15">
+      <section id="key" className="mt-5 pt-4 border-t border-[#6A6A6A]/30">
         <h2 className="text-lg font-semibold mb-4">
           What the icons on the next page mean:
         </h2>

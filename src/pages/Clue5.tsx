@@ -34,7 +34,7 @@ const Clue5 = () => {
           </li>
         </ol>
 
-        <br />
+        <hr className="border-t border-[#6A6A6A]/30 my-4" />
 
         <h2 className="text-lg font-semibold mb-2">Information for Immigration:</h2>
         <p className="mb-4">
