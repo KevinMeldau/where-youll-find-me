@@ -44,7 +44,7 @@ const Clue5 = () => {
           <br />
           Click{" "}
           <a
-            href="/manage-reservations.pdf"
+            href="/manage-reservation.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="font-bold underline hover:text-primary"
