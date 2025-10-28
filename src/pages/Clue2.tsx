@@ -37,7 +37,7 @@ const Clue2 = () => {
                      5711 West Century Boulevard, Los Angeles
                   </span>.
                   <br />
-                  Your room is waiting, just go to reception and get a key card.
+                  Your room is waiting, just go to reception and get a key card. You're in room<span className="font-bold"> XXXX</span>.
                </li>
                <li>Eat something. Take a hot shower. Put your feet up.
                   <br />

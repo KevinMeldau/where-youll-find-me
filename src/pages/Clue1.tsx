@@ -60,7 +60,7 @@ const Clue1 = () => {
                   <span className="font-bold">Pack a small bag</span>. Just enough for two days, small enough so you don’t need to check it. Clothes that let you breathe, walk, nap. Layers you can shed if it gets warm. Skip the winter coat, you won’t need it.
                </li>
                <li>
-                  <span className="font-bold">No passport, just ID, a phone charger, and your laptop</span> so that you're able to do your Fullbright work.
+                  <span className="font-bold">No passport, just ID, a phone charger (this is important), your earphones, and your laptop</span> so that you're able to do your Fullbright work.
                </li>
                <li>
                   Call a Lyft. Be at the airport by{" "}
