@@ -48,7 +48,7 @@ const Clue2 = () => {
           </li>
 
           <li>
-            Eat something. Take a hot shower. Put your feet up.
+            Eat something. Take a shower. Put your feet up.
             <br />
             Sleep, you’re going to need it.
           </li>
