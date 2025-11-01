@@ -43,7 +43,7 @@ const BeganJourneyFooter = () => {
             <strong>Playlist</strong>: Opens a Spotify playlist, my <span className="font-semibold">'mixed tape'</span> to you.
           </p>
           <p>
-            <strong>Images</strong>: Opens a photo gallery, snippets from the life we've created so far.
+            <strong>Images</strong>: Opens a photo gallery, snippets from the life we've created.
           </p>
         </div>
       </section>
