@@ -37,13 +37,13 @@ const BeganJourneyFooter = () => {
 
         <div className="space-y-3 text-sm">
           <p>
-            <strong>Voice clip</strong>: Opens a voice message from me, guiding you.
+            <strong>Voice clip</strong>: Opens a voice message from me, guiding you in each clue.
           </p>
           <p>
             <strong>Playlist</strong>: Opens a Spotify playlist, my “mixed tape” to you.
           </p>
           <p>
-            <strong>Images</strong>: Opens a small photo gallery from our story.
+            <strong>Images</strong>: Opens a small photo gallery from our story so far.
           </p>
         </div>
       </section>
