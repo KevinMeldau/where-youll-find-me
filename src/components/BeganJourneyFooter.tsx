@@ -31,49 +31,20 @@ const BeganJourneyFooter = () => {
 
       {/* --- Key Section --- */}
       <section id="key" className="mt-5 pt-4 border-t border-[#6A6A6A]/30">
-        <h2 className="text-lg font-semibold mb-4">
+        <h2 className="text-lg font-semibold mb-3">
           What the icons on the next page mean:
         </h2>
 
-        <div className="space-y-4">
-          {/* Voice Clip */}
-          <div className="flex items-center gap-3">
-            <img
-              src="/appfiles/icons/Mic Default.svg"
-              alt="Mic icon"
-              title="Voice clip"
-              className="w-[38px] shrink-0 transition-transform hover:scale-110"
-            />
-            <p className="leading-snug">
-              <strong>Voice clip</strong>: Opens a voice clip from me, guiding you.
-            </p>
-          </div>
-
-          {/* Playlist */}
-          <div className="flex items-center gap-3">
-            <img
-              src="/appfiles/icons/Music Default.svg"
-              alt="Playlist icon"
-              title="Playlist"
-              className="w-[38px] shrink-0 transition-transform hover:scale-110"
-            />
-            <p className="leading-snug">
-              <strong>Playlist</strong>: Opens a Spotify playlist, my “mixed tape” to you.
-            </p>
-          </div>
-
-          {/* Images */}
-          <div className="flex items-center gap-3">
-            <img
-              src="/appfiles/icons/Photo Default.svg"
-              alt="Images icon"
-              title="Images"
-              className="w-[38px] shrink-0 transition-transform hover:scale-110"
-            />
-            <p className="leading-snug">
-              <strong>Images</strong>: Opens a photo gallery of the life we've created.
-            </p>
-          </div>
+        <div className="space-y-3 text-sm">
+          <p>
+            <strong>Voice clip</strong>: Opens a voice message from me, guiding you.
+          </p>
+          <p>
+            <strong>Playlist</strong>: Opens a Spotify playlist — my “mixed tape” to you.
+          </p>
+          <p>
+            <strong>Images</strong>: Opens a small photo gallery from our story.
+          </p>
         </div>
       </section>
 
