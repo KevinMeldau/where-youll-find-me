@@ -37,7 +37,7 @@ const BeganJourneyFooter = () => {
 
         <div className="space-y-3 text-sm">
           <p>
-            <strong>Voice clip</strong>: Opens a voice message from me, guiding you in each clue.
+            <strong>Voice clip</strong>: Opens a new voice message from me, guiding you in each clue.
           </p>
           <p>
             <strong>Playlist</strong>: Opens a Spotify playlist, my <span className="font-semibold">'mixed tape'</span> to you.
