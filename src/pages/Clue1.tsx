@@ -64,7 +64,7 @@ const Clue1 = () => {
                </li>
                <li>
                   Call a Lyft. Be at the airport by{" "}
-                  <span className="font-bold">8:30AM (November 15th)</span>.
+                  <span className="font-bold">7:30AM (November 15th). IMPORTANT: with all the airport drama, you need to be there by this time.</span>
                </li>
                <li className="space-y-2">
                   <div>When you walk inside, go to the <span className="font-bold">information desk</span> and show them your ID and confirmation number (below). They’ll point you to the right kiosk to print your boarding pass.</div>
