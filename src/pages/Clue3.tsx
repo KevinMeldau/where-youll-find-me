@@ -74,7 +74,7 @@ const Clue3 = () => {
                </li>
                <li>Board your flight.<span className="font-bold"> Make sure you sign up for wifi for this flight.</span></li>
                <li>
-                  The password to your next clue (<span className="italic">The Line Between</span>) is your flight number, for example: <span className="font-mono">DL8846</span>.
+                  The password to your next clue (<span className="italic">The Line Between</span>) is your flight number, for example: <span className="font-mono">AF028</span>.
                </li>
             </ol>
          </div>
