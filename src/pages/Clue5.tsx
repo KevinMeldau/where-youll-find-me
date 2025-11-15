@@ -96,6 +96,9 @@ const Clue5 = () => {
         <p>
           We’re island hopping and staying flexible with where we stay.
         </p>
+
+        <br />
+
         <p>
           Come out of customs, draw about 8000 XFP (about $70). Catch a taxi to the hotel.
         </p>
