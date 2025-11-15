@@ -66,7 +66,7 @@ const Clue3 = () => {
                   Go back to <span className="font-bold">LAX</span>, be there by <span className="font-bold">8:30PM (November 15th).</span>
                </li>
                <li className="space-y-2">
-                  <div>When you get there, go to the <span className="font-bold">Delta</span> kiosk and print your boarding pass.</div>
+                  <div>When you get there, go to the <span className="font-bold">Air France</span> desk and print your boarding pass.</div>
                   <div className="flex flex-wrap gap-2">
                     <CopyChip label="Confirmation code" value="GEYSQL" />
                     <CopyChip label="Ticket number" value="0062364065840" />
