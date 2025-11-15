@@ -100,7 +100,7 @@ const Clue5 = () => {
         <br />
 
         <p>
-          Come out of customs, draw about 8000 XFP (about $70) from an ATM. Catch a taxi to the hotel.
+          <span className="font-bold">Come out of customs, draw about 8000 XFP (about $70) from an ATM. Catch a taxi to the hotel.</span>
         </p>
       </div>
 
