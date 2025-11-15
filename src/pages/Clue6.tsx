@@ -31,9 +31,6 @@ const Clue6 = () => {
             <h2 className="text-lg font-semibold mb-2">What I need you to do:</h2>
             <ol className="list-decimal pl-6 space-y-2 marker:font-bold">
                <li>
-                  When you exit customs, someone will be waiting with your name on a sign. Follow them, you’re in good hands.
-               </li>
-               <li>
                   When you get to the hotel, head to the{" "}
                   <a
                      href="https://www.hilton.com/en/hotels/ppthihh-hilton-hotel-tahiti/dining/"
