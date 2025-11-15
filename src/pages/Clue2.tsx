@@ -42,7 +42,7 @@ const Clue2 = () => {
               5711 West Century Boulevard, Los Angeles.</span>
             <br />
             <span className="italic">There is a free shuttle outside Terminal 1</span>. 
-            <br />
+            <br /><br />
             Your room is waiting, just go to reception and collect your key card.
             You’re in room <span className="font-bold">4014</span>.
           </li>
